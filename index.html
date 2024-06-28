@@ -14,17 +14,30 @@
         Sherlock Holmes for Your Strings!😂
     </h2>
      <div class="text-container">
-       <input type="text" class="input-text">
-       <input type="text" class="input-text">
+       <input type="text" class="input-text" id="OG-text">
+       <input type="text" class="input-text" id="compare-text">
      </div>
 
-     <p class="text-result"></p>
+     <p class="text-result" id="text-result"></p>
 
      <button type="button" class="btn" onclick="CheckMatch()">
         Check Match
      </button>
 
      <script>
+        function CheckMatch(){
+            const OriginalText = document.getElementById("OG-text")
+            const CompareText = document.getElementById("compare-text")
+
+            const TextResult = document.getElementById("text-result")
+
+            if(OriginalText.value == CompareText.value){
+                TextResult.innerText = "It's a Match! These texts are BFFs!"
+            }
+            else{
+                TextResult.innerText = "No Match! These texts are like oil and water!"
+            }
+        }
 
      </script>
 </body>
